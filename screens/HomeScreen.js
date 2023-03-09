@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from 'react-native'
+import {SafeAreaView, StyleSheet, ScrollView } from 'react-native'
 import BottomTabs from '../components/BottomTabs'
 import Header from '../components/home/Header'
 import Post from '../components/home/Post'
@@ -9,11 +9,10 @@ import { TABS } from '../data/Tabs'
 
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-        {/* <Text style={{color: 'white'}}>Hey</Text> */}
-       <Header />
+       <Header navigation={navigation} />
        <Stories />
        <ScrollView>
         {Posts.map((post, index)=>(
